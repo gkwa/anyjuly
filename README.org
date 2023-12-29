@@ -1,0 +1,19 @@
+* anyjuly
+
+** summary
+
+Demonstrate how easy it is to create tmp file, you don't need your own
+timestamps for uniqueness.
+
+** usage example
+
+#+begin_example
+[(master)]$ make test
+go mod tidy
+gofumpt -w ./cmd/main.go ./logger.go ./anyjuly.go
+golangci-lint run
+go build -o anyjuly cmd/main.go
+./anyjuly -v -v
+level=DEBUG source=anyjuly/anyjuly.go:50 msg="temp file created" path=/var/folders/qk/5rcd35wx00jcj3zylnxcfvrr0000gn/T/clipboard-3710704124.txt
+[(master)]$ 
+#+end_example
